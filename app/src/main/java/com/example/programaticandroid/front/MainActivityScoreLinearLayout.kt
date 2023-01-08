@@ -36,7 +36,7 @@ class MainActivityScoreLinearLayout(context: Context?) : LinearLayout(context) {
                 cpuTextView
             )
         )
-        this.setBackgroundResource(R.color.purple_500)
+        this.setBackgroundColor(Color.BLACK)
     }
     private fun setLayout() {
         playerTextView = createTextView("0")
