@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">ProgramaticAndroid</string>
+    <string name="Victory">Vitorias</string>
+    <string name="Draw">Empates</string>
+    <string name="Lose">Derrotas</string>
+    <string name="separator">: </string>
 </resources>

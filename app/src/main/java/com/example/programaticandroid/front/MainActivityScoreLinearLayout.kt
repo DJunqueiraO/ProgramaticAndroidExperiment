@@ -43,8 +43,8 @@ class MainActivityScoreLinearLayout(context: Context?) : LinearLayout(context) {
         cpuTextView = createTextView("Derrotas")
     }
     fun setScore(wins: Int, draws: Int, loses: Int) {
-        playerTextView.text = "Vitórias: " + wins
-        scoreTextView.text = "Empates: " + draws
-        cpuTextView.text = "Derrotas: " + loses
+        playerTextView.text = "Vitórias:\n" + wins
+        scoreTextView.text = "Empates:\n" + draws
+        cpuTextView.text = "Derrotas:\n " + loses
     }
 }
