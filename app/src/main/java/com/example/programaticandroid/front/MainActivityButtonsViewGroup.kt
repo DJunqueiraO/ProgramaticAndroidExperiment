@@ -10,9 +10,6 @@ import android.widget.RelativeLayout
 import com.example.programaticandroid.utils.extensions.viewgroup.addViews
 
 class MainActivityButtonsViewGroup(context: Context?) : LinearLayout(context) {
-    val configureButtonsViewGroup: (ViewGroup) -> Unit = {
-        it.setBackgroundColor(Color.BLUE)
-    }
     var stonebutton: Button
     var paperbutton: Button
     var scissorsbutton: Button
@@ -32,15 +29,7 @@ class MainActivityButtonsViewGroup(context: Context?) : LinearLayout(context) {
         scissorsbutton = createButton("Tesoura")
         lizardbutton = createButton("Lagarto")
         spokbutton = createButton("Spok")
-        configureButtonsViewGroup(this)
-        val layoutParams = RelativeLayout.LayoutParams(
-            RelativeLayout.LayoutParams.MATCH_PARENT,
-            RelativeLayout.LayoutParams.WRAP_CONTENT
-        ).apply {
-            addRule(RelativeLayout.ALIGN_PARENT_TOP)
-            addRule(RelativeLayout.ALIGN_PARENT_LEFT)
-        }
-        this.layoutParams = layoutParams
+        this.setBackgroundColor(Color.BLUE)
         this.addViews(
             arrayOf(
                 stonebutton,
