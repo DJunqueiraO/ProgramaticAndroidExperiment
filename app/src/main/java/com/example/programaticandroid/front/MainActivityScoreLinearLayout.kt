@@ -7,13 +7,12 @@ import android.graphics.Typeface
 import android.view.Gravity
 import android.widget.LinearLayout
 import android.widget.TextView
-import com.example.programaticandroid.R
 import com.example.programaticandroid.utils.extensions.viewgroup.addViews
 
 class MainActivityScoreLinearLayout(context: Context?) : LinearLayout(context) {
-    lateinit var playerTextView: TextView
-    lateinit var scoreTextView: TextView
-    lateinit var cpuTextView: TextView
+    private lateinit var playerTextView: TextView
+    private lateinit var scoreTextView: TextView
+    private lateinit var cpuTextView: TextView
     val createTextView: (String) -> TextView = { text ->
         val textView = TextView(context)
         val size = Resources.getSystem().displayMetrics.widthPixels/3
@@ -39,8 +38,13 @@ class MainActivityScoreLinearLayout(context: Context?) : LinearLayout(context) {
         this.setBackgroundColor(Color.BLACK)
     }
     private fun setLayout() {
-        playerTextView = createTextView("0")
-        scoreTextView = createTextView("Faça sua jogada:")
-        cpuTextView = createTextView("0")
+        playerTextView = createTextView("Vitórias")
+        scoreTextView = createTextView("Empates")
+        cpuTextView = createTextView("Derrotas")
+    }
+    fun setScore(wins: Int, draws: Int, loses: Int) {
+        playerTextView.text = "Vitórias: " + wins
+        scoreTextView.text = "Empates: " + draws
+        cpuTextView.text = "Derrotas: " + loses
     }
 }
