@@ -7,6 +7,7 @@ import android.graphics.Typeface
 import android.view.Gravity
 import android.widget.LinearLayout
 import android.widget.TextView
+import com.example.programaticandroid.R
 import com.example.programaticandroid.utils.extensions.viewgroup.addViews
 
 class MainActivityScoreLinearLayout(context: Context?) : LinearLayout(context) {
@@ -35,7 +36,7 @@ class MainActivityScoreLinearLayout(context: Context?) : LinearLayout(context) {
                 cpuTextView
             )
         )
-        this.setBackgroundColor(Color.MAGENTA)
+        this.setBackgroundResource(R.color.purple_500)
     }
     private fun setLayout() {
         playerTextView = createTextView("0")
