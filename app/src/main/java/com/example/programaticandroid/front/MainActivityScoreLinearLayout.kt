@@ -3,6 +3,7 @@ package com.example.programaticandroid.front
 import android.content.Context
 import android.content.res.Resources
 import android.graphics.Color
+import android.graphics.Typeface
 import android.view.Gravity
 import android.widget.LinearLayout
 import android.widget.TextView
@@ -21,6 +22,8 @@ class MainActivityScoreLinearLayout(context: Context?) : LinearLayout(context) {
         textView.gravity = Gravity.CENTER
         textView.layoutParams = layoutParams
         textView.text = text
+        textView.textSize = 30f
+        textView.typeface = Typeface.create(Typeface.DEFAULT, Typeface.BOLD)
         textView
     }
     init {

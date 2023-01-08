@@ -4,8 +4,8 @@ import android.content.Context
 import android.content.res.Resources
 import android.graphics.Color
 import android.widget.ImageView
-import android.widget.LinearLayout
 import android.widget.RelativeLayout
+import com.example.programaticandroid.R
 import com.example.programaticandroid.utils.extensions.viewgroup.addViews
 
 class MainActivityRelativeLayout(context: Context?) : RelativeLayout(context) {
@@ -16,7 +16,7 @@ class MainActivityRelativeLayout(context: Context?) : RelativeLayout(context) {
     lateinit var scoreViewGroup: MainActivityScoreLinearLayout
     init {
         setLayout()
-        this.setBackgroundColor(Color.RED)
+        this.setBackgroundResource(R.color.pink)
         this.addViews(
             arrayOf(
                 buttonsViewGroup,
@@ -44,7 +44,6 @@ class MainActivityRelativeLayout(context: Context?) : RelativeLayout(context) {
         }
         playerImageView = ImageView(context).apply {
             this.id = generateViewId()
-            this.setBackgroundColor(Color.GREEN)
             this.layoutParams = LayoutParams(
                 width, height*2/10
             ).apply {
@@ -54,7 +53,8 @@ class MainActivityRelativeLayout(context: Context?) : RelativeLayout(context) {
         }
         versusImageView = ImageView(context).apply {
             this.id = generateViewId()
-            this.setBackgroundColor(Color.CYAN)
+            this.setBackgroundColor(Color.WHITE)
+            this.setImageResource(R.drawable.vs)
             this.layoutParams = LayoutParams(
                 width, height/10
             ).apply {
@@ -64,7 +64,6 @@ class MainActivityRelativeLayout(context: Context?) : RelativeLayout(context) {
         }
         cpuImageView = ImageView(context).apply {
             this.id = generateViewId()
-            this.setBackgroundColor(Color.GREEN)
             this.layoutParams = LayoutParams(
                 width, height*2/10
             ).apply {
