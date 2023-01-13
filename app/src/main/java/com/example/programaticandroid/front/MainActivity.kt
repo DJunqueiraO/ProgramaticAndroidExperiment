@@ -4,22 +4,25 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 
 class MainActivity : AppCompatActivity() {
-    lateinit var viewGroup: MainActivityRelativeLayout
+    lateinit var view: MainActivityRelativeLayout
+    val gameLogic: (MainActivityRelativeLayout, Int) -> Unit = {layout, id ->
+        layout.playerImageView.setImageResource(id)
+        layout.cpuImageView.setImageResource(JokenpoGame.play(id))
+        layout.scoreViewGroup.setScore(
+            JokenpoGame.getWins(),
+            JokenpoGame.getDraws(),
+            JokenpoGame.getLoses()
+        )
+    }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        viewGroup = MainActivityRelativeLayout(this)
+        view = MainActivityRelativeLayout(this)
         setListener()
-        setContentView(viewGroup)
+        setContentView(view)
     }
     private fun setListener() {
-        viewGroup.buttonsViewGroup.buttonEffect = {imageId ->
-            viewGroup.playerImageView.setImageResource(imageId)
-            viewGroup.cpuImageView.setImageResource(JokenpoGame.play(imageId))
-            viewGroup.scoreViewGroup.setScore(
-                JokenpoGame.getWins(),
-                JokenpoGame.getDraws(),
-                JokenpoGame.getLoses()
-            )
+        view.buttonsViewGroup.buttonEffect = {imageId ->
+            view.apply {gameLogic(this, imageId)}
         }
     }
 }
