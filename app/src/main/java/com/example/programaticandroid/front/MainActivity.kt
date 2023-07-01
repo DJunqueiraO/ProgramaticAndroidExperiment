@@ -21,8 +21,8 @@ class MainActivity : AppCompatActivity() {
         setContentView(view)
     }
     private fun setListener() {
-        view.buttonsViewGroup.buttonEffect = {imageId ->
-            view.apply {gameLogic(this, imageId)}
+        view.buttonsViewGroup.buttonEffect = {
+            imageId -> view.apply {gameLogic(this, imageId)}
         }
     }
 }
